@@ -1,0 +1,10 @@
+- name: install django sample app on localhost
+  hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: git clone django sample app
+      git: repo=https://github.com/samuraitaiga/django-sample.git dest=/opt/django-sample
+    - name: install pip
+      easy_install: name=pip
+    - name: django dependency install
+      pip: requirements=/opt/django-sample/requirements.txt
