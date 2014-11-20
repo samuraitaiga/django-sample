@@ -10,7 +10,7 @@ RUN cd /root && rpm -ivh epel-release-7-2.noarch.rpm
 RUN yum install -y ansible
 
 # checkout repository which has ansible playbook
-RUN git clone https://github.com/samuraitaiga/django-sample.git /opt/django-sample.git
+RUN git clone https://github.com/samuraitaiga/django-sample.git /opt/django-sample
 RUN cd /opt/django-sample && ansible-playbook playbook.yml --connection=local
 
 EXPOSE 8000
